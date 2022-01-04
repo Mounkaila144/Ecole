@@ -1,8 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello AdminController!{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block body %}
     <h1><span>classe </span></h1>
-{{ form(form) }}
+    {{ form_start(form) }}
+    <div class="container">
+        <div class="row">
+              <div class="col-6 col-md-6 col-lg-3">
+              {{ form_row(form.nom) }}
+              </div>
+              <div class="col-6 col-md-6 col-lg-3">
+              {{ form_row(form.effectif, {
+                  label: 'effectif',
+              }) }}
+               </div>
+              <button type="submit" class="btn">Register</button>
+              {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

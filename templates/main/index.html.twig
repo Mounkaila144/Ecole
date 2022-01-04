@@ -3,8 +3,20 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
+<div class="row">
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
     <h1><span>Bienvenu a lucas </span></h1>
-    <div class="text-center text-lg-start">
-        <a href="login" class="btn-get-started scrollto">Conecter vous</a>
+    <div data-aos="fade-up" data-aos-delay="600">
+        <div class="text-center text-lg-start">
+            <a href="login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Conecter vous</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
     </div>
+    </div>
+    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+    </div>
+</div>
 {% endblock %}
