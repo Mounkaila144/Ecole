@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Matiere;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,7 +15,6 @@ class MatiereType extends AbstractType
             ->add('nom')
             ->add('coefficient')
             ->add('user')
-            ->add('ajouter',SubmitType::class)
         ;
     }
 

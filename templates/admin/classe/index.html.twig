@@ -1,27 +1,50 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
-    <h1><span>Classe </span></h1>
-    <div class="text-center text-lg-start">
-        <a href="add" class="btn-get-started scrollto">Ajouter une classe</a>
-    </div>
-    <table class="table table-bordered table-dark table-striped">
-        <tr>
-            <th>Identifiant</th>
-            <th>nom classe</th>
-            <th>effectif classe</th>
-            <th>Modifier</th>
-        </tr>
+    <div class="col-lg-6">
+        <div class="card-style mb-30">
+            <h6 class="mb-10">Table head options</h6>
+            <p class="text-sm mb-20">
+                Use one of two modifier classes to make thead appear light
+                or dark gray.
+            </p>
+            <div class="table-wrapper table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col"><button class="btn btn-primary btn-block">Ajouter</button></th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Effectif </th>
+                        <th scope="col">Modifier </th>
+                        <th scope="col">Suprimer</th>
+                    </tr>
+                    <!-- end table row-->
+                    </thead>
+                    <tbody>
+                    {% for liste in liste %}
+                    <tr>
+                        <th scope="row">
+                            <h5 class="text-sm">#{{liste.id}}</h5>
+                        </th>
+                        <td>
+                            <p>{{liste.nom}}</p>
+                        </td>
+                        <td>
+                            <p>{{liste.effectif}}</p>
+                        </td>
+                        <td class="min-width">
+                            <a href="{{path('admin_classe_edit',{id:  liste.id})}}"><span class="btn btn-primary">Modifier</span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-          {% for liste in liste %}
-        <tr >
-            <td>{{liste.id}}</td>
-            <td>{{liste.nom}}</td>
-            <td>{{liste.effectif}}</td>
-            <td> <a href="{{path('admin_classe_edit',{id:  liste.id})}}">Valider</a> </td>
-            {% endfor %}
-        </tr>
-    </table>
+                <!-- end table -->
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
 {% endblock %}
